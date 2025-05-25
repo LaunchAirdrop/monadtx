@@ -31,7 +31,7 @@ Install packages
 npm install
 ```
 
-Edit and input Private Key and Cookie:
+Edit and input Private Key, Bearer, and Cookie:
 ```bash
 nano .env
 ```
