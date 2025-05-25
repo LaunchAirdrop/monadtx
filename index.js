@@ -74,11 +74,11 @@ async function Monad() {
 
 await Monad();
 
-let lastEnvContent = fs.readFileSync(path.join(process.cwd(), ".env"), "utf-8");
+let Deploy = fs.readFileSync(path.join(process.cwd(), ".env"), "utf-8");
 fs.watchFile(path.join(process.cwd(), ".env"), async (curr, prev) => {
     const currentContent = fs.readFileSync(path.join(process.cwd(), ".env"), "utf-8");
-    if (currentContent !== lastEnvContent) {
-        lastEnvContent = currentContent;
+    if (currentContent !== Deploy) {
+        Deploy = currentContent;
         await Monad();
     }
 });
@@ -223,7 +223,7 @@ function getRandomAmountBubbleFi() {
   const min = 1, max = 10;
   return ethers.parseUnits((Math.random() * (max - min) + min).toFixed(6), 18);
 }
-function getRandomTxCount() {
+function getRandomtxCount() {
   return Math.floor(Math.random() * (98 - 57 + 1)) + 57;
 }
 
@@ -265,7 +265,7 @@ async function addTransactionToQueue(callback, label = "") {
     await withRetry(() => callback(nonce));
 
 } catch (err) {
-    addLog(`[TX] Gagal menjalankan transaksi \${label}: \${err.message}`, "tx");
+    addLog(`[tx] Gagal menjalankan transaksi \${label}: \${err.message}`, "tx");
 
 }
 }
